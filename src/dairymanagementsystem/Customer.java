@@ -686,7 +686,7 @@ public class Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_printActionPerformed
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
-        JOptionPane.showMessageDialog(null, "Please logout for exiting");
+        JOptionPane.showMessageDialog(null, "Logout successfully");
         
     }//GEN-LAST:event_btn_exitActionPerformed
 
@@ -757,9 +757,20 @@ public class Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_showActionPerformed
 
     private void SalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesActionPerformed
+        close();
+        try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
         Sales s=new Sales();
         s.setVisible(true);
-        close();
+        
     }//GEN-LAST:event_SalesActionPerformed
 
     private void jcustomertableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcustomertableMouseClicked
@@ -816,20 +827,43 @@ public class Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_SalesMouseClicked
 
     private void CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerActionPerformed
+        
+        close();
+        try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
         Customer c=new Customer();
         c.setVisible(true);
-        close();
     }//GEN-LAST:event_CustomerActionPerformed
 
     private void StockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockActionPerformed
+       
+       close();
+       try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
        Stock st=new Stock();
        st.setVisible(true);
-       close();
     }//GEN-LAST:event_StockActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
         ChangePsw ss=new ChangePsw();
         ss.setVisible(true);
+       
     }//GEN-LAST:event_helpActionPerformed
 
     /**

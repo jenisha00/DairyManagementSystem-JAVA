@@ -335,22 +335,22 @@ public class Stock extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(37, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(jComboBox1))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TxtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 15, 15))
+                        .addGap(39, 39, 39)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(15, 15, 15))))
         );
 
         jMenu1.setText("New");
@@ -570,6 +570,19 @@ public class Stock extends javax.swing.JFrame {
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
         close();
+        
+            try{}catch(Exception  e){}
+            finally{
+            try{
+                rs.close();
+                pst.close();
+                conn.close();
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null,e);
+            }}
+        Customer c=new Customer();
+        c.setVisible(true);
     }//GEN-LAST:event_btn_exitActionPerformed
 
     private void jstocktableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jstocktableMouseClicked
@@ -648,9 +661,20 @@ public class Stock extends javax.swing.JFrame {
     }//GEN-LAST:event_CustomerMouseClicked
 
     private void CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerActionPerformed
+        close();
+        try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
         Customer c=new Customer();
         c.setVisible(true);
-        close();
+        
     }//GEN-LAST:event_CustomerActionPerformed
 
     private void SalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalesMouseClicked
@@ -658,15 +682,37 @@ public class Stock extends javax.swing.JFrame {
     }//GEN-LAST:event_SalesMouseClicked
 
     private void SalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesActionPerformed
+        close();
+        try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
         Sales s=new Sales();
         s.setVisible(true);
-        close();
+     
     }//GEN-LAST:event_SalesActionPerformed
 
     private void StockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockActionPerformed
+        close();
+        try{}catch(Exception  e){}
+        finally{
+        try{
+            rs.close();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }}
         Stock st=new Stock();
         st.setVisible(true);
-        close();
+        
     }//GEN-LAST:event_StockActionPerformed
 
     private void helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpActionPerformed
