@@ -1089,7 +1089,7 @@ public class Sales extends javax.swing.JFrame {
                 " CASE  WHEN (SALES.QTY*SALES.RATE)-SALES.PAID_AMT ==0 THEN 'Paid'\n" +
                 "ELSE 'Credit'\n" +
                 "END PAY_TYPE from customer,sales where customer.C_ID = sales.C_ID and sales.date between '"+date1+"' and '"+date2+"'";
-                
+                 
                 pst=conn.prepareStatement(query);
                 rs=pst.executeQuery();
                 jsalestable.setModel(DbUtils.resultSetToTableModel(rs));
@@ -1101,20 +1101,20 @@ public class Sales extends javax.swing.JFrame {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,e);
             }
-                String query="select sum(QTY *RATE) as Total, sum(Paid_amt) as Paid, sum((QTY*RATE)-PAID_AMT) as Due from sales,customer where sales.C_ID = customer.C_ID and'\n" +
-                        "sales.date between '"+date1+"' and '"+date2+"' ";
-        try {
-            pst=conn.prepareStatement(query);
-            rs=pst.executeQuery();
-            String a=rs.getString("Total");
-            String b=rs.getString("Paid");
-            String c=rs.getString("Due");
-            Sales.setText(a);
-            Payment.setText(b);
-            Due.setText(c);
-        }catch (Exception e) {
-           JOptionPane.showMessageDialog(null,e);
-        }
+                String query="select sum(QTY *RATE) as Total, sum(Paid_amt) as Paid, sum((QTY*RATE)-PAID_AMT) as Due from sales,customer where sales.C_ID = customer.C_ID and \n" +
+                        "sales.date between '"+date1+"' and '"+date2+"'";
+                         try {
+                pst=conn.prepareStatement(query);
+                rs=pst.executeQuery();
+                String a=rs.getString("Total");
+                String b=rs.getString("Paid");
+                String c=rs.getString("Due");
+                Sales.setText(a);
+                Payment.setText(b);
+                Due.setText(c);
+            }catch (Exception e) {
+               JOptionPane.showMessageDialog(null,e);
+            }
         }
     }//GEN-LAST:event_btn_showActionPerformed
 
